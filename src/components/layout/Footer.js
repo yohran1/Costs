@@ -10,8 +10,8 @@ export default function Footer(){
                 <li><FaFacebook /></li>
                 <li><FaInstagram /></li>
                 <li><FaLinkedin /></li>
-                <p className={style.copy_right}><span>Costs</span>&copy; 2023</p>
             </ul>
+            <p className={style.copy_right}><span>Costs</span>&copy; 2023</p>
         </footer>
     )
 }
