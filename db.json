@@ -1,21 +1,33 @@
 {
-    "project" : [],
-    "categories": [
-        {
-            "id": 1,
-            "name": "Infra"
-        },
-        {
-            "id": 2,
-            "name": "Desenvolvimento"
-        },
-        {
-            "id": 3,
-            "name": "Design"
-        },
-        {
-            "id": 4,
-            "name": "Planejamento"
-        }
-    ]
+  "projects": [
+    {
+      "name": "Projeto teste 1º",
+      "orcamento": "4999",
+      "category": {
+        "id": "2",
+        "name": "Desenvolvimento"
+      },
+      "costs": 0,
+      "services": [],
+      "id": 1
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Infra"
+    },
+    {
+      "id": 2,
+      "name": "Desenvolvimento"
+    },
+    {
+      "id": 3,
+      "name": "Design"
+    },
+    {
+      "id": 4,
+      "name": "Planejamento"
+    }
+  ]
 }
