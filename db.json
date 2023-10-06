@@ -21,6 +21,39 @@
       "costs": 0,
       "services": [],
       "id": 2
+    },
+    {
+      "name": "Costs",
+      "orcamento": "0.1",
+      "category": {
+        "id": "4",
+        "name": "Planejamento"
+      },
+      "costs": 0,
+      "services": [],
+      "id": 3
+    },
+    {
+      "category": {
+        "id": "3",
+        "name": "Design"
+      },
+      "orcamento": "100",
+      "name": "FOTOS",
+      "costs": 0,
+      "services": [],
+      "id": 4
+    },
+    {
+      "category": {
+        "id": "1",
+        "name": "Infra"
+      },
+      "name": "Infra-project",
+      "orcamento": "100",
+      "costs": 0,
+      "services": [],
+      "id": 5
     }
   ],
   "categories": [
