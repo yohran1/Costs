@@ -2,18 +2,18 @@
   "projects": [
     {
       "name": "Projeto teste 1º",
-      "orcamento": "4999",
+      "orcamento": "1000",
       "category": {
-        "id": "2",
-        "name": "Desenvolvimento"
+        "id": "1",
+        "name": "Infra"
       },
       "costs": 0,
       "services": [],
       "id": 1
     },
     {
-      "name": "Meu projeto",
-      "orcamento": "10000000000000",
+      "name": "Projeto teste 2º",
+      "orcamento": "5000",
       "category": {
         "id": "2",
         "name": "Desenvolvimento"
@@ -23,37 +23,26 @@
       "id": 2
     },
     {
-      "name": "Costs",
-      "orcamento": "0.1",
+      "name": "Projeto teste 3º",
+      "orcamento": "10000",
       "category": {
-        "id": "4",
-        "name": "Planejamento"
+        "id": "3",
+        "name": "Design"
       },
       "costs": 0,
       "services": [],
       "id": 3
     },
     {
+      "name": "Projeto teste 4º",
+      "orcamento": "15000",
       "category": {
-        "id": "3",
-        "name": "Design"
+        "id": "4",
+        "name": "Planejamento"
       },
-      "orcamento": "100",
-      "name": "FOTOS",
       "costs": 0,
       "services": [],
       "id": 4
-    },
-    {
-      "category": {
-        "id": "1",
-        "name": "Infra"
-      },
-      "name": "Infra-project",
-      "orcamento": "100",
-      "costs": 0,
-      "services": [],
-      "id": 5
     }
   ],
   "categories": [

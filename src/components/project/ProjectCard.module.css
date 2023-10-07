@@ -72,3 +72,8 @@
     background-color: #222;
     color: #ffbb66;
 }
+@media(max-width:767px){
+    .project_card{
+        display: flex;
+    }
+}
