@@ -1,6 +1,7 @@
 import style from './ProjectCard.module.css'
 import { Link } from 'react-router-dom'
 import { BsPencil, BsFillTrashFill } from 'react-icons/bs'
+import Project from '../pages/Project'
 
 export default function ProjectCard({ id, name, orcamento, category, handleRemove }){
 
@@ -20,7 +21,9 @@ export default function ProjectCard({ id, name, orcamento, category, handleRemov
                     <span className={`${style[category.toLowerCase()]}`}></span> {category}
                 </p>
                 <div className={style.project_card_actions}>
-                    <Link to="/"><BsPencil />Editar</Link>
+                    <Link to={`/project/${id}`}>
+                    <BsPencil />Editar
+                    </Link>
                     <button onClick={remove}>
                         <BsFillTrashFill />Excluir
                     </button>

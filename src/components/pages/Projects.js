@@ -36,7 +36,7 @@ export default function Projects(){
             setRemoveLoading(true)
         })
         .catch(error => console.log(error))
-        }, 3000)
+        }, 2000)
     },[])
 
     function removeProject(id){
