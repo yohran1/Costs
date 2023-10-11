@@ -14,7 +14,7 @@ export default function Message({type, msg}){
 
             const timer = setTimeout(()=>{
                 setVisible(false)
-            }, 3000)    
+            }, 2000)    
             return ()=> clearTimeout(timer)
         }
     },[msg])

@@ -1,8 +1,8 @@
 {
   "projects": [
     {
-      "name": "Projeto teste 1º",
-      "orcamento": "1000",
+      "name": "Projeto 2.0",
+      "orcamento": "1.0000",
       "category": {
         "id": "1",
         "name": "Infra"
