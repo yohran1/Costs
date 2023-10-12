@@ -14,6 +14,7 @@ export default function Project(){
     const [mostrarProjeto, setMostrarProjeto] = useState(false)
     const [message, setMessage] = useState()
     const [type, setType] = useState()
+    const [mostrarServicoForm, setMostrarServicoForm] = useState(false)
 
     useEffect(()=>{
         setTimeout(()=>{
@@ -31,6 +32,7 @@ export default function Project(){
     }, [id])
 
     function editPost(project){
+        setMessage('')
         // validação de orçamento
 
         if(project.orcamento < project.costs){
@@ -60,6 +62,9 @@ export default function Project(){
 
     function alternarProjetoFrom(){
         setMostrarProjeto(!mostrarProjeto)
+    }
+    function alternarServicoFrom(){
+        setMostrarServicoForm(!mostrarServicoForm)
     }
 
     return(
@@ -95,6 +100,19 @@ export default function Project(){
                             </div>
                         }
                     </div>
+                    <div className={style.service_form_container}>
+                        <h2>Adicione um Serviço:</h2>
+                        <button className={style.btn} onClick={alternarServicoFrom}>
+                            {!mostrarServicoForm ? 'Adicionar Serviço' : 'Fechar'}
+                        </button>
+                        <div className={style.project_info}>
+                            {mostrarServicoForm && <div>Formulário do Serviço</div>}
+                        </div>
+                    </div>
+                    <h2>Serviços</h2>
+                    <Container customClass="start">
+                        <p>Itens do projeto</p>
+                    </Container>
                 </Container>
             </div>
             
