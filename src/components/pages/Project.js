@@ -1,10 +1,12 @@
 import style from './Project.module.css'
+import { parse, v4 as uuidv4 } from 'uuid'
 import { useParams } from 'react-router-dom'
 import { useState,useEffect } from 'react'
 import Loading from '../layout/Loading'
 import Container from '../layout/container'
 import ProjectForm from '../project/ProjectForm'
 import Message from '../layout/Message'
+import ServicoForm from '../services/ServicoForm'
 
 export default function Project(){
 
@@ -60,6 +62,40 @@ export default function Project(){
         
     }
 
+    function createService(){
+
+        // Ultimo serviço
+        const ultimoServico = project.services[project.services.length - 1]
+
+        ultimoServico.id = uuidv4()
+
+        const ultimoServicoCusto = ultimoServico.costs
+        const newCusto = parseFloat(project.costs) + parseFloat(ultimoServicoCusto)
+
+        // si passou do máximo valor que se tem no projeto
+        if(newCusto > parseFloat(project.orcamento)){
+            setMessage('Orçamento ultrapassado, verifique o valor do serviço!')
+            setType('error')
+            project.services.pop()
+            return false
+        }
+        // Adicionar custo de serviço ao custo total do projeto
+        project.costs = newCusto
+
+        //upDate project
+        fetch(`http://localhost:5000/projects/${project.id}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(project)
+        }).then(res => res.json())
+        .then(data => {
+            // exibir os services
+            console.log(data)
+        })
+        .catch(error => console.log(error))
+    }
     function alternarProjetoFrom(){
         setMostrarProjeto(!mostrarProjeto)
     }
@@ -106,7 +142,13 @@ export default function Project(){
                             {!mostrarServicoForm ? 'Adicionar Serviço' : 'Fechar'}
                         </button>
                         <div className={style.project_info}>
-                            {mostrarServicoForm && <div>Formulário do Serviço</div>}
+                            {mostrarServicoForm && 
+                                <ServicoForm 
+                                mudancaSubmit={createService}
+                                textBtn="Adicionar Serviço"
+                                projectData={project}
+                                />
+                            }
                         </div>
                     </div>
                     <h2>Serviços</h2>

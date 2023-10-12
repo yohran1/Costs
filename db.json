@@ -7,8 +7,15 @@
         "id": "1",
         "name": "Infra"
       },
-      "costs": 0,
-      "services": [],
+      "costs": null,
+      "services": [
+        {
+          "name": "Meu novo serviço",
+          "cost": "50",
+          "description": "kkkkkk",
+          "id": "21a41ac5-025e-43cd-bf81-1ab1bb2a45be"
+        }
+      ],
       "id": 1
     },
     {
