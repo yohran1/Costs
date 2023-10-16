@@ -1,5 +1,6 @@
 import style from './Project.module.css'
-import { parse, v4 as uuidv4 } from 'uuid'
+import {  v4 as uuidv4 } from 'uuid'
+import ServiceCard from '../services/ServiceCard'
 import { useParams } from 'react-router-dom'
 import { useState,useEffect } from 'react'
 import Loading from '../layout/Loading'
@@ -13,6 +14,7 @@ export default function Project(){
     const {id} = useParams()
 
     const [project, setProject] = useState([])
+    const [services, setServices] = useState([])
     const [mostrarProjeto, setMostrarProjeto] = useState(false)
     const [message, setMessage] = useState()
     const [type, setType] = useState()
@@ -28,6 +30,7 @@ export default function Project(){
         }).then(res => res.json())
         .then(data => {
             setProject(data)
+            setServices(data.services)
         })
         .catch(error => console.log(error))
         }, 800)
@@ -93,8 +96,12 @@ export default function Project(){
         .then(data => {
             // exibir os services
             console.log(data)
+            setMostrarServicoForm(false)
         })
         .catch(error => console.log(error))
+    }
+    function removeService(){
+
     }
     function alternarProjetoFrom(){
         setMostrarProjeto(!mostrarProjeto)
@@ -108,12 +115,16 @@ export default function Project(){
             {project.name ? 
             <div className={style.project_details}>
                 <Container customClass="column">
+
                     {message && <Message type={type} msg={message} />}
+
                     <div className={style.details_container}>
                         <h1>Projeto: {project.name}</h1>
+
                         <button className={style.btn} onClick={alternarProjetoFrom}>
                             {!mostrarProjeto ? 'Editar Projeto' : 'Fechar'}
                         </button>
+
                         {!mostrarProjeto ? 
                             <div className={style.project_info}>
                                 <p>
@@ -126,7 +137,7 @@ export default function Project(){
                                     <span>Total Utilizado: R$</span>{project.costs}
                                 </p>
                             </div>
-                        : 
+                            : 
                             <div className={style.project_info}>
                                 <ProjectForm 
                                 handleSubmit={editPost}
@@ -153,7 +164,19 @@ export default function Project(){
                     </div>
                     <h2>Serviços</h2>
                     <Container customClass="start">
-                        <p>Itens do projeto</p>
+                        {services.length > 0 && 
+                         services.map((service) => (
+                            <ServiceCard 
+                                id={service.id}
+                                name={service.name}
+                                orcamento={service.orcamento}
+                                description={service.description}
+                                key={service.id}
+                                handleRemove={removeService}
+                            />
+                         ))
+                        }
+                        {services.length === 0 && <p>Não há Serviços Cadastrados!</p>}
                     </Container>
                 </Container>
             </div>

@@ -33,7 +33,6 @@ export default function ProjectForm({ handleSubmit ,btnText, projectData }){
         setProject({...project, category: {
             id: event.target.value,
             name: event.target.options[event.target.selectedIndex].text,
-
         }})
     }
 

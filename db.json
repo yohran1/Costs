@@ -11,9 +11,15 @@
       "services": [
         {
           "name": "Meu novo serviço",
-          "cost": "50",
-          "description": "kkkkkk",
-          "id": "21a41ac5-025e-43cd-bf81-1ab1bb2a45be"
+          "cost": "10",
+          "description": "HUmbrella Corp",
+          "id": "53a94be0-a144-40fd-8f75-f97d418f2d29"
+        },
+        {
+          "name": "exemplo",
+          "cost": "20",
+          "description": "exemplo",
+          "id": "4441cff5-1db4-4502-974b-8b98eae3041c"
         }
       ],
       "id": 1
