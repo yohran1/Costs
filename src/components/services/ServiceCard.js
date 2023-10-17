@@ -4,7 +4,8 @@ import {BsFillTrashFill} from 'react-icons/bs'
 export default function ServiceCard({id, name, orcamento, description, handleRemove}){
 
     const remove = (event) => {
-
+        event.preventDefault()
+        handleRemove(id, orcamento)
     }
 
     return(

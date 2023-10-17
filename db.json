@@ -7,15 +7,8 @@
         "id": "1",
         "name": "Infra"
       },
-      "cost": 50,
-      "services": [
-        {
-          "name": "Contratar infra",
-          "cost": "50",
-          "description": "Contratação",
-          "id": "8a33b734-288c-43f6-aca2-3a7e8e651a4d"
-        }
-      ],
+      "cost": 0,
+      "services": [],
       "id": 1
     },
     {

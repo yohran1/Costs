@@ -103,7 +103,29 @@ export default function Project(){
         })
         .catch(error => console.log(error))
     }
-    function removeService(){
+    function removeService(id, orcamento){
+        const updateServicos = project.services.filter(service => service.id !== id)
+
+        const updateProjeto = project
+
+        updateProjeto.services = updateServicos
+        updateProjeto.cost = parseFloat(updateProjeto.cost) - parseFloat(orcamento) // Ao remover o serviço, ira remover dos custos do projeto.
+
+        // Update no Banco de dados
+        fetch(`http://localhost:5000/projects/${updateProjeto.id}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(updateProjeto)
+        }).then(res => res.json())
+        .then(data => {
+            setProject(updateProjeto)   //  Atualizando o projeto estado do projeto atual.
+            setServices(updateServicos)//  Atualizando o serviço estado do projeto atual.
+            setMessage("Serviço removido com sucesso!")
+            setType('success')
+        })
+        .catch(error => console.log(error))
 
     }
     function alternarProjetoFrom(){
