@@ -7,19 +7,13 @@
         "id": "1",
         "name": "Infra"
       },
-      "costs": null,
+      "cost": 50,
       "services": [
         {
-          "name": "Meu novo serviço",
-          "cost": "10",
-          "description": "HUmbrella Corp",
-          "id": "53a94be0-a144-40fd-8f75-f97d418f2d29"
-        },
-        {
-          "name": "exemplo",
-          "cost": "20",
-          "description": "exemplo",
-          "id": "4441cff5-1db4-4502-974b-8b98eae3041c"
+          "name": "Contratar infra",
+          "cost": "50",
+          "description": "Contratação",
+          "id": "8a33b734-288c-43f6-aca2-3a7e8e651a4d"
         }
       ],
       "id": 1
@@ -31,7 +25,7 @@
         "id": "2",
         "name": "Desenvolvimento"
       },
-      "costs": 0,
+      "cost": 0,
       "services": [],
       "id": 2
     },
@@ -42,7 +36,7 @@
         "id": "3",
         "name": "Design"
       },
-      "costs": 0,
+      "cost": 0,
       "services": [],
       "id": 3
     }

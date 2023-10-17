@@ -40,7 +40,7 @@ export default function Project(){
         setMessage('')
         // validação de orçamento
 
-        if(project.orcamento < project.costs){
+        if(project.orcamento < project.cost){
             // message
             setMessage('O orçamento não pode ser menor que o custo do projeto!')
             setType('error')
@@ -72,8 +72,11 @@ export default function Project(){
 
         ultimoServico.id = uuidv4()
 
-        const ultimoServicoCusto = ultimoServico.costs
-        const newCusto = parseFloat(project.costs) + parseFloat(ultimoServicoCusto)
+        const ultimoServicoCusto = ultimoServico.cost
+        console.log("Ultimo Custo do Serviço " + ultimoServicoCusto)
+
+        const newCusto = parseFloat(project.cost) + parseFloat(ultimoServicoCusto)
+        console.log("Novo Custo" + newCusto)
 
         // si passou do máximo valor que se tem no projeto
         if(newCusto > parseFloat(project.orcamento)){
@@ -83,7 +86,7 @@ export default function Project(){
             return false
         }
         // Adicionar custo de serviço ao custo total do projeto
-        project.costs = newCusto
+        project.cost = newCusto
 
         //upDate project
         fetch(`http://localhost:5000/projects/${project.id}`, {
@@ -134,7 +137,7 @@ export default function Project(){
                                     <span>Total de Orçamento: R$</span>{project.orcamento}
                                 </p>
                                 <p>
-                                    <span>Total Utilizado: R$</span>{project.costs}
+                                    <span>Total Utilizado: R$</span>{project.cost}
                                 </p>
                             </div>
                             : 
