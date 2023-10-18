@@ -194,7 +194,7 @@ export default function Project(){
                             <ServiceCard 
                                 id={service.id}
                                 name={service.name}
-                                orcamento={service.orcamento}
+                                orcamento={service.cost}
                                 description={service.description}
                                 key={service.id}
                                 handleRemove={removeService}
